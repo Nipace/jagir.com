@@ -25,7 +25,7 @@
                     </div>
                     <a href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
-                        <span>{{ __('My profile') }}</span>
+                        <span>{{ __('My profile1') }}</span>
                     </a>
                     <a href="#" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
