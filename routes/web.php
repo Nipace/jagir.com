@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.welcome');
-})->name('main');
+Route::get('/','Frontend\HomeController@index')->name('main');
 
 Auth::routes();
 
@@ -29,6 +27,7 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'User\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'User\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'User\ProfileController@password']);
+	Route::resource('/job','Admin\JobController');
 });
 
 Route::get('/employee', function () {

@@ -25,9 +25,11 @@
       </div>
 </header>
 @include('frontend.layouts.partials.aboutus')
+
 <section class="about py-5 mt-4 text-light">
     <div class="container card1">
         <div class="row mb-1">
+        @foreach($job as $jobs)
             <div class="col-md-3">
                 <div class="card card-cascade wider">
                 </div>
@@ -38,60 +40,13 @@
                     </a>
                 </div>
                 <div class="card-body card-body-cascade text-center pb-0 btn-light">
-                    <h4 class="card-title"><strong>Laravel Developer</strong></h4>
+                    <h4 class="card-title"><strong>{{$jobs->title}}</strong></h4>
                     <h6 class="text-info pb-2"><strong>Full Time </strong></h6>
                     <h6 class="card-text"> RadiusInfosys Pvt. Ltd  </h6>
                     <button type="button" class="btn btn-outline-success mb-2">Apply</button>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card card-cascade wider">
-                </div>
-                <div class="view view-cascade overlay">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" alt="Card image cap">
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <div class="card-body card-body-cascade text-center pb-0 btn-light">
-                    <h4 class="card-title"><strong>Laravel Developer</strong></h4>
-                    <h6 class="text-danger pb-2"><strong>Part Time </strong></h6>
-                    <h6 class="card-text"> RadiusInfosys Pvt. Ltd  </h6>
-                    <button type="button" class="btn btn-outline-success mb-2">Apply</button>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-cascade wider">
-                </div>
-                <div class="view view-cascade overlay">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" alt="Card image cap">
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <div class="card-body card-body-cascade text-center pb-0 btn-light">
-                    <h4 class="card-title"><strong>Laravel Developer</strong></h4>
-                    <h6 class="text-info pb-2"><strong>Full Time </strong></h6>
-                    <h6 class="card-text"> RadiusInfosys Pvt. Ltd  </h6>
-                    <button type="button" class="btn btn-outline-success mb-2">Apply</button>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-cascade wider">
-                </div>
-                <div class="view view-cascade overlay">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" alt="Card image cap">
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <div class="card-body card-body-cascade text-center pb-0 btn-light">
-                    <h4 class="card-title"><strong>Laravel Developer</strong></h4>
-                    <h6 class="text-info pb-2"><strong>Full Time </strong></h6>
-                    <h6 class="card-text"> RadiusInfosys Pvt. Ltd  </h6>
-                    <button type="button" class="btn btn-outline-success mb-2">Apply</button>
-                </div>
-            </div>
+         @endforeach  
           </div>
         </div>
       </div>

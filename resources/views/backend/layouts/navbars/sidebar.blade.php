@@ -29,7 +29,7 @@
                     </a>
                     <a href="#" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
-                        <span>{{ __('Settings1212') }}</span>
+                        <span>{{ __('Settings') }}</span>
                     </a>
                     <a href="#" class="dropdown-item">
                         <i class="ni ni-calendar-grid-58"></i>
@@ -106,7 +106,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{route('job.index')}}">
                         <i class="ni ni-briefcase-24 text-blue"></i> {{ __('Add Job Vanacny') }}
                     </a>
                 </li>
