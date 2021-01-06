@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('backend.layouts.app')
 
 @section('content')
-    @include('layouts.headers.cards')
+    @include('backend.layouts.headers.cards')
     
     <div class="container-fluid mt--7">
    
@@ -80,7 +80,7 @@
          
         </div>
 
-        @include('layouts.footers.auth')
+        @include('backend.layouts.footers.auth')
     </div>
 @endsection
 

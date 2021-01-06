@@ -22,13 +22,13 @@ class UserController extends Controller
     public function index(User $model)
     {
         $user= User::paginate(4);
-        return view('users.index', compact('user'));
+        return view('backend.users.index', compact('user'));
     }
 
     public function create()
     {
         $role = Role::whereNotIn('name',['SuperAdmin'])->get();
-        return view('users.create',compact('role'));
+        return view('backend.users.create',compact('role'));
     }
 
     public function store(UserRequest $request)
@@ -46,7 +46,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $role = $user->getRoleNames();
-        return view('users.view',compact('user','role'));
+        return view('backend.users.view',compact('user','role'));
     }
 
     public function edit($id)
@@ -54,7 +54,7 @@ class UserController extends Controller
         $allRole = Role::whereNotIn('name',['SuperAdmin'])->get();
         $user = User::find($id);
         $role = $user->roles->pluck('name');
-        return view('users.edit',compact('user','role','allRole'));
+        return view('backend.users.edit',compact('user','role','allRole'));
     }
 
     public function update(Request $request, $id)

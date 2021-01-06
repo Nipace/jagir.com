@@ -7,7 +7,7 @@
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">   
             <h1><i class="ni ni-briefcase-24"></i>
-JAGIR.COM</h1>
+                JAGIR.COM</h1>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -107,22 +107,22 @@ JAGIR.COM</h1>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="ni ni-planet text-blue"></i> {{ __('Icons') }}
+                        <i class="ni ni-briefcase-24 text-blue"></i> {{ __('Add Job Vanacny') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="ni ni-pin-3 text-orange"></i> {{ __('Maps') }}
+                        <i class="ni ni-credit-card text-orange"></i> {{ __('Salary Prediction') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="ni ni-key-25 text-info"></i> {{ __('Login') }}
+                        <i class="ni ni-badge text-info"></i> {{ __('Vacancy Responses') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="ni ni-circle-08 text-pink"></i> {{ __('Register') }}
+                        <i class="ni ni-circle-08 text-pink"></i> {{ __('Skill Test Management') }}
                     </a>
                 </li>
              
