@@ -84,6 +84,7 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
+                @role('Admin')
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
@@ -105,6 +106,14 @@
                         </ul>
                     </div>
                 </li>
+                @endrole
+                @role('Company')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('company.profile')}}">
+                        <i class="ni ni-briefcase-24 text-blue"></i> {{ __('Company Profile') }}
+                    </a>
+                </li>
+                @endrole
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('job.index')}}">
                         <i class="ni ni-briefcase-24 text-blue"></i> {{ __('Add Job Vanacny') }}
@@ -120,12 +129,13 @@
                         <i class="ni ni-badge text-info"></i> {{ __('Vacancy Responses') }}
                     </a>
                 </li>
+                @role('Admin')
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="ni ni-circle-08 text-pink"></i> {{ __('Skill Test Management') }}
                     </a>
                 </li>
-             
+                @endrole
             </ul> 
         </div>
     </div>

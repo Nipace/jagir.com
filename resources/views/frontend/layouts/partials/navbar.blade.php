@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mr-4 ">
             <li class="nav-item  font-weight-bold active mr-2 ">
-              <a class="nav-link main-color" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link main-color" href="{{route('main')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             @auth
         <form action="{{route('logout')}}" method="POST">
@@ -19,7 +19,7 @@
         </form>
         @endauth
             <li class="nav-item  font-weight-bold  mr-2">
-                <a class="nav-link main-color" href="#">Jobs</a>
+                <a class="nav-link main-color" href="{{route('view.job')}}">Jobs</a>
               </li>
               <li class="nav-item  font-weight-bold  mr-2">
                 <a class="nav-link main-color" href="#">Employeer</a>

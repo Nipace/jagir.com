@@ -1,6 +1,14 @@
 @extends('frontend.layouts.app')
-
 @section('content')
+
+@if (session('status'))
+                                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                    {{ session('status') }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
 <header class="masthead">
         <div class="back">
         <div class="container h-100">
@@ -8,12 +16,13 @@
             <div class="col-12 text-center">
               <h1 class="font-weight-light text-light">WELCOME TO JAGIR.COM</h1>
               <p class="lead text-light mb-3">Know Your Worth</p>
-              <form method="GET" action="">
+              <form method="POST" action="{{route('salary.predict')}}">
+              @csrf
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
                           <div class="input-group custom-search-form">
-                              <input type="text" name="search" class="form-control form-control-lg bg-light" placeholder="Position">
-                              <input type="text" name="search" class="form-control form-control-lg bg-light ml-2" placeholder="Experience">
+                              <input type="text" name="job" class="form-control form-control-lg bg-light" placeholder="Position">
+                              <input type="text" name="experience" class="form-control form-control-lg bg-light ml-2" placeholder="Experience">
                             <button class="btn main-color-background btn-lg ml-2"><i class="fas fa-search"></i></button>
                           </div>
                         </div>
@@ -46,11 +55,11 @@
                     <button type="button" class="btn btn-outline-success mb-2">Apply</button>
                 </div>
             </div>
-         @endforeach  
+         @endforeach
           </div>
         </div>
       </div>
 </section>
+
 @include('frontend.layouts.partials.location')
-    
 @endsection

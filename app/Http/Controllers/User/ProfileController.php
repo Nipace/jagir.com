@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use Illuminate\Support\Facades\Hash;
+use App\Company;
+use Illuminate\Http\Request;
+
 
 class ProfileController extends Controller
 {
@@ -43,5 +46,23 @@ class ProfileController extends Controller
         auth()->user()->update(['password' => Hash::make($request->get('password'))]);
 
         return back()->withPasswordStatus(__('Password successfully updated.'));
+    }
+
+    public function companyProfile()
+    {
+        $company = Company::where('user_id',\Auth::user()->id)->first();
+        return view('backend.company.profile',compact('company'));
+    }
+
+    public function editcompanyProfile(Request $request, $id)
+    {
+        $company = Company::find($id);
+        $company->company_type = $request->company_type;
+        $company->phone = $request->phone;
+        $company->website = $request->website;
+        $company->descritption = $request->description;
+        $company->location = $request->location;
+        $company->save();
+        return redirect()->back();
     }
 }

@@ -13,7 +13,7 @@ class PermissionTableSeeder extends Seeder
     public function run()
     {
         $role = Role::create(['name' => 'Admin']);
-        $role = Role::create(['name' => 'Employer']);
+        $role = Role::create(['name' => 'Company']);
         $role = Role::create(['name' => 'Employee']);
     }
 }
