@@ -20,6 +20,15 @@ class CreateJobsTable extends Migration
             $table->string('experience');
             $table->string('qualificaton');
             $table->text('job_skills');
+            $table->string('job_category');
+            $table->string('employment_type');
+            $table->string('level');
+            $table->integer('no_of_vacancy');
+            $table->string('offered_salary');
+            $table->string('application_deadline');
+            $table->string('applying_procedure')->nullable();
+            $table->unsignedBigInteger('company_id');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');         
             $table->timestamps();
         });
     }

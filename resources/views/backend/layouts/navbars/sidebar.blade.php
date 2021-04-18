@@ -125,13 +125,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{route('response.job')}}">
                         <i class="ni ni-badge text-info"></i> {{ __('Vacancy Responses') }}
                     </a>
                 </li>
                 @role('Admin')
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{route('skill-test.index')}}">
                         <i class="ni ni-circle-08 text-pink"></i> {{ __('Skill Test Management') }}
                     </a>
                 </li>

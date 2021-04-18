@@ -168,15 +168,12 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
-                                <div class="input-group input-group-alternative mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                    </div>
-                                    <input class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('Company Description') }}" type="text" name="description" value="{{$company->descritption}}" required autofocus>
-                                </div>
+                            
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-description">Company Description</label>
+                                <textarea class="form-control description " name ="description" id="input-description">{{$company->descritption}}</textarea>
                                 @if ($errors->has('description'))
-                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('description') }}</strong>
                                     </span>
                                 @endif
@@ -207,3 +204,15 @@
         @include('backend.layouts.footers.auth')
     </div>
 @endsection
+@push('js')
+    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea.description',
+            
+        });
+    </script>
+
+@endpush

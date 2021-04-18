@@ -1,6 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
-
 @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
                                     {{ session('status') }}
@@ -21,8 +20,8 @@
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
                           <div class="input-group custom-search-form">
-                              <input type="text" name="job" class="form-control form-control-lg bg-light" placeholder="Position">
-                              <input type="text" name="experience" class="form-control form-control-lg bg-light ml-2" placeholder="Experience">
+                              <input type="text" name="job" class="form-control form-control-lg bg-light" placeholder="Position" required>
+                              <input type="text" name="experience" class="form-control form-control-lg bg-light ml-2" placeholder="Experience" required>
                             <button class="btn main-color-background btn-lg ml-2"><i class="fas fa-search"></i></button>
                           </div>
                         </div>
@@ -48,9 +47,10 @@
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
+                
                 <div class="card-body card-body-cascade text-center pb-0 btn-light">
                     <h4 class="card-title"><strong>{{$jobs->title}}</strong></h4>
-                    <h6 class="text-info pb-2"><strong>Full Time </strong></h6>
+                    <h6 class="text-info pb-2"><strong>{{$jobs->employment_type}} </strong></h6>
                     <h6 class="card-text"> RadiusInfosys Pvt. Ltd  </h6>
                     <button type="button" class="btn btn-outline-success mb-2">Apply</button>
                 </div>

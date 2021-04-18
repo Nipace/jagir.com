@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/','Frontend\HomeController@index')->name('main');
 
 Auth::routes();
@@ -32,12 +33,22 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::resource('/job','Admin\JobController');
 	Route::get('/company/profile','User\ProfileController@companyProfile')->name('company.profile');
 	Route::put('/company/profile/{id}','User\ProfileController@editcompanyProfile')->name('company.edit');
-
+	Route::get('/response/job','Admin\ResposneController@index')->name('response.job');
+	Route::get('/cv/view/{id}','Admin\ResposneController@viewcv')->name('view.cv');
+	Route::resource('/skill-test','Admin\JobSkillTestController');
+	Route::get('/question/create/{id}','Admin\JobSkillTestController@createQuestion')->name('question.create');
+	Route::post('/question/store/{id}','Admin\JobSkillTestController@storeQuestion')->name('question.store');
 });
 //frontend Routes
 Route::get('/view/job','Frontend\JobController@index')->name('view.job');
-Route::get('/view/job/{id}','Frontend\JobController@show')->name('edit.job');
+Route::get('/view/job/{id}','Frontend\JobController@show')->name('show.job');
 Route::post('/salary/predict', 'Frontend\Jobcontroller@predictSalary')->name('salary.predict');
+Route::get('/apply/{id}','Frontend\ApplyController@apply')->name('apply.user');
+Route::post('/apply/{id}','Frontend\ApplyController@store')->name('apply.store');
+Route::get('/test','Frontend\TestController@index')->name('test.index');
+Route::get('/test/{id}','Frontend\TestController@show')->name('test.show');
+
+
 
 Route::get('/employee', function () {
     return view('hello');

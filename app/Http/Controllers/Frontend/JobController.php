@@ -15,9 +15,10 @@ class JobController extends Controller
         return view('frontend.job.index', compact('job'));
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('frontend.job.show');
+        $job = Job::find($id);
+        return view('frontend.job.show',compact('job'));
     }
 
     public function predictSalary(Request $request)
@@ -31,7 +32,7 @@ class JobController extends Controller
             'experience' => $request->experience,
         ]]);
         $r = json_decode($data->getBody()->getContents());
-
-        return redirect(route('main'))->withStatus(__('Your Predicted Salary is Rs' . $r->salar_prediction));
+    
+        return redirect(route('main'))->withStatus(__($r->salar_prediction));
     }
 }

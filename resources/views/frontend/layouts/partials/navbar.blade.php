@@ -11,13 +11,7 @@
             <li class="nav-item  font-weight-bold active mr-2 ">
               <a class="nav-link main-color" href="{{route('main')}}">Home <span class="sr-only">(current)</span></a>
             </li>
-            @auth
-        <form action="{{route('logout')}}" method="POST">
-        @csrf
-            <span class=" text-light"><i class="far fa-user"></i> {{Auth::user()->name}}</span>
-           <button type="submit" class="btn btn-link login-btn"><span class=" text-light pl-5"><i class="fas fa-sign-out-alt"></i> Logout</span></button> 
-        </form>
-        @endauth
+          
             <li class="nav-item  font-weight-bold  mr-2">
                 <a class="nav-link main-color" href="{{route('view.job')}}">Jobs</a>
               </li>
@@ -25,7 +19,7 @@
                 <a class="nav-link main-color" href="#">Employeer</a>
               </li>
               <li class="nav-item  font-weight-bold  mr-2 ">
-                <a class="nav-link main-color" href="#about-us">Skill Test</a>
+                <a class="nav-link main-color" href="{{route('test.index')}}">Skill Test</a>
               </li>
             <li class="nav-item  font-weight-bold  mr-2 ">
                 <a class="nav-link main-color" href="#about-us">About Us</a>
@@ -36,8 +30,15 @@
 
 
           </ul>
+          @guest
           <a class="nav-link text-success" href="{{route('login')}}"> <button class="btn main-color-background"><i class="fas fa-user"></i> Login/Register</button>  </a>
-
+          @endguest
+          @auth
+          <form action="{{route('logout')}}" method="POST">
+          @csrf
+             <button type="submit" class="btn btn-link nav-link btn main-color-background"><span class="text-light"><i class="fas fa-sign-out-alt"></i> Logout</span></button> 
+          </form>
+          @endauth
         </div>
       </nav>
   </div>

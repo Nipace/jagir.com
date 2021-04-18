@@ -30,7 +30,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
 </head>
-<body id="main-body">
+<body id="{{$body_class ?? 'main-body'}}">
         @include('frontend.layouts.partials.navbar')
       @yield('content')
 

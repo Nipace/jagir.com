@@ -7,12 +7,12 @@
 <header>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1514580426463-fd77dc4d0672?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80')">
+        <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')">
           <div class="carousel-caption d-none d-md-block">
             <div class="text-center mb-5">
                 <hr width="10%" class="main-color-background line " >
                 
-                  <h1 class="font-weight-bold text-uppercase">Our Jobs</h1>
+                  <h1 class="font-weight-bold text-uppercase text-light">Our Jobs</h1>
                   <form method="GET" action="">
                     <div class="row">
                         <div class="col-md-6 offset-md-3">
@@ -74,10 +74,11 @@
                                     <!-- Text -->
                                     <hr class="bg-dark">
                                     <div class="row justify-content-center">
-                                          <span data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                                            <button type="button"  class="btn main-color-background mb-3"  
-                                             data-toggle="modal" data-target="#cartModal-{{$items->id}}" value="{{$items->id}}"><i class="fas fa-cart-arrow-down"></i> Apply </button>
-                                          </span>
+                                          
+                                            <a href="{{route('show.job',['id'=>$items->id])}}">
+                                              <button type="button"  class="btn main-color-background mb-3"  
+                                             ><i class="ni ni-check-bold"></i> Apply </button>
+                                            </a>
                                       </div>
                                     </div>
                                   </div>
